@@ -1,0 +1,32 @@
+name: CI
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    # WinForms and the Win32 interop need Windows.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore AutoClicker/AutoClicker.sln
+
+      - name: Check style
+        run: dotnet format AutoClicker/AutoClicker.sln --verify-no-changes --severity warn --no-restore
+
+      - name: Build
+        run: dotnet build AutoClicker/AutoClicker.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test AutoClicker/AutoClicker.sln --configuration Release --no-build --verbosity normal
