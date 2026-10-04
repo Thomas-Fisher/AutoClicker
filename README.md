@@ -1,6 +1,6 @@
 # AutoClicker
 
-A small Windows auto clicker built with .NET 8 and WinForms. It clicks at the current cursor position or at a fixed screen position, with optional random delay and positional jitter.
+A small Windows auto clicker built with .NET 10 and WinForms. It clicks at the current cursor position or at a fixed screen position, with optional random delay and positional jitter.
 
 ## Features
 
@@ -15,7 +15,7 @@ A small Windows auto clicker built with .NET 8 and WinForms. It clicks at the cu
 ## Requirements
 
 - Windows 10 or 11
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) to build (the .NET 8 Desktop Runtime is enough to run a published build)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) to build (the .NET 10 Desktop Runtime is enough to run a published build)
 
 ## Build, run and test
 
